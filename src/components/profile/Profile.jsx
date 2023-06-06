@@ -1,33 +1,35 @@
+import { Profile, Avatar, Name, Tag, Location, Stats } from "./ProfileStyled";
+
 const User = (userData) => {
   const { username, tag, location, avatar, stats } = userData;
   return (
-    <div class="profile">
-      <div class="description">
-        <img
+    <Profile>
+      <div className="description">
+        <Avatar
           src={avatar}
           alt="User avatar"
-          class="avatar"
+          className="avatar"
         />
-        <p class="name">{username}</p>
-        <p class="tag">@{tag}</p>
-        <p class="location">{location}</p>
+        <Name>{username}</Name>
+        <Tag>@{tag}</Tag>
+        <Location>{location}</Location>
       </div>
 
-      <ul class="stats">
+      <Stats>
         <li>
-          <span class="label">Followers</span>
-          <span class="quantity">{stats.followers}</span>
+          <span className="label">Followers </span>
+          <span className="quantity">{stats.followers}</span>
         </li>
         <li>
-          <span class="label">Views</span>
-          <span class="quantity">{stats.views}</span>
+          <span className="label">Views </span>
+          <span className="quantity">{stats.views}</span>
         </li>
         <li>
-          <span class="label">Likes</span>
-          <span class="quantity">{stats.likes}</span>
+          <span className="label">Likes </span>
+          <span className="quantity">{stats.likes}</span>
         </li>
-      </ul>
-    </div>
+      </Stats>
+    </Profile>
   );
 };
 

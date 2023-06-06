@@ -1,28 +1,29 @@
+import {Table, Thead, Tr} from './TransactionHistoryStyled'
+
 const TransactionHistory = ({ transaction }) => {
-  // const transactionHistory = transaction.transaction
-  // console.log(transactionHistory)
+
   return (
-    <table class="transaction-history">
-      <thead>
+    <Table>
+      <Thead>
         <tr>
           <th>Type</th>
           <th>Amount</th>
           <th>Currency</th>
         </tr>
-      </thead>
+      </Thead>
 
       <tbody>
         {transaction.map(({ id, type, amount, currency }) => {
           return (
-            <tr key={id}>
+            <Tr key={id}>
               <td>{type}</td>
               <td>{amount}</td>
               <td>{currency}</td>
-            </tr>
+            </Tr>
           );
         })}
       </tbody>
-    </table>
+    </Table>
   );
 };
 

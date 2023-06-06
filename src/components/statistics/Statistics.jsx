@@ -1,20 +1,22 @@
-const Statistics = ({stats}) => {
-  
-  return (
-    <section class="statistics">
-      {stats.title && <h2 class="title">{stats.title}</h2>}
+import { Statistic, StatList, Title, Item } from './StatisticsStyled';
 
-      <ul class="stat-list">
+const Statistics = ({ title, stats }) => {
+  return (
+    <Statistic>
+      {title && <Title>{title}</Title>}
+
+      <StatList>
         {stats.map(obj => {
+          const randomColor = Math.floor(Math.random() * 16777215).toString(16);
           return (
-            <li class="item" key={obj.id}>
-              <span class="label">{obj.label}</span>
-              <span class="percentage">%{obj.percentage}</span>
-            </li>
+            <Item key={obj.id} colorBackg={randomColor}>
+              <span className="label">{obj.label}</span>
+              <span className="percentage">%{obj.percentage}</span>
+            </Item>
           );
         })}
-      </ul>
-    </section>
+      </StatList>
+    </Statistic>
   );
 };
 
