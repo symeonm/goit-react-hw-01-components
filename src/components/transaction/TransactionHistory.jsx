@@ -1,7 +1,6 @@
-import {Table, Thead, Tr} from './TransactionHistoryStyled'
-
+import { Table, Thead, Tr } from './TransactionHistoryStyled';
+import propTypes from 'prop-types';
 const TransactionHistory = ({ transaction }) => {
-
   return (
     <Table>
       <Thead>
@@ -25,6 +24,10 @@ const TransactionHistory = ({ transaction }) => {
       </tbody>
     </Table>
   );
+};
+
+TransactionHistory.propTypes = {
+  transaction: propTypes.array.isRequired,
 };
 
 export default TransactionHistory;

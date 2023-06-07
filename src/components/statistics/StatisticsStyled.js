@@ -28,7 +28,7 @@ export const Title = styled.h2`
   height: 32px;
   background-color: aliceblue;
 `;
-export const Item = styled.li`
+export const ItemStat = styled.li`
 display: flex;
 flex-direction: column;
 align-items: center;

@@ -1,15 +1,11 @@
-import { Profile, Avatar, Name, Tag, Location, Stats } from "./ProfileStyled";
+import { Profile, Avatar, Name, Tag, Location, Stats } from './ProfileStyled';
+import propTypes from 'prop-types';
 
-const User = (userData) => {
-  const { username, tag, location, avatar, stats } = userData;
+const User = ({ username, tag, location, avatar, stats }) => {
   return (
     <Profile>
       <div className="description">
-        <Avatar
-          src={avatar}
-          alt="User avatar"
-          className="avatar"
-        />
+        <Avatar src={avatar} alt="User avatar" className="avatar" />
         <Name>{username}</Name>
         <Tag>@{tag}</Tag>
         <Location>{location}</Location>
@@ -34,3 +30,11 @@ const User = (userData) => {
 };
 
 export default User;
+
+User.propTypes = {
+  username: propTypes.string.isRequired, 
+  tag: propTypes.string.isRequired,
+  location: propTypes.string.isRequired,
+  avatar: propTypes.string.isRequired,
+  stats: propTypes.object.isRequired
+};

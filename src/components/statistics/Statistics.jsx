@@ -1,4 +1,5 @@
-import { Statistic, StatList, Title, Item } from './StatisticsStyled';
+import { Statistic, StatList, Title, ItemStat } from './StatisticsStyled';
+import propTypes from 'prop-types';
 
 const Statistics = ({ title, stats }) => {
   return (
@@ -9,15 +10,20 @@ const Statistics = ({ title, stats }) => {
         {stats.map(obj => {
           const randomColor = Math.floor(Math.random() * 16777215).toString(16);
           return (
-            <Item key={obj.id} colorBackg={randomColor}>
+            <ItemStat key={obj.id} colorBackg={randomColor}>
               <span className="label">{obj.label}</span>
               <span className="percentage">%{obj.percentage}</span>
-            </Item>
+            </ItemStat>
           );
         })}
       </StatList>
     </Statistic>
   );
 };
+
+Statistics.propTypes = {
+  title: propTypes.string.isRequired,
+  stats: propTypes.array.isRequired
+}
 
 export default Statistics;
